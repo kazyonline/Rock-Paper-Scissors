@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <script>
+  function computerPlay(){
+    let array=['rock','paper','scissors'];
+    let x= Math.floor(Math.random()*3);
+    return array[x];
+    
+}
+
+let playerScore = 0;
+let computerScore = 0;
+
+function playRound(playerSelection, computerSelection) {
+    // your code here!
+   playerSelection = prompt("Make a choice(rock,paper,scissors):","").toLowerCase();
+   computerSelection = computerPlay() 
+
+    if (playerSelection == computerSelection){
+        computerScore = computerScore + 0;
+        playerScore = playerScore + 0;
+    }
+    else if((playerSelection == 'rock') && (computerSelection == 'paper')){
+        computerScore = computerScore + 1;
+    }
+    else if((playerSelection == 'paper') && (computerSelection == 'rock')){
+        playerScore = playerScore + 1;
+    }
+    else if((playerSelection == 'scissors') && (computerSelection == 'paper')){
+        playerScore = playerScore + 1;
+    }
+    else if((playerSelection == 'paper') && (computerSelection == 'scissors')){
+        computerScore = computerScore + 1;
+    }
+    else if((playerSelection == 'scissors') && (computerSelection == 'rock')){
+        computerScore = computerScore + 1;
+    }
+    else if((playerSelection == 'rock') && (computerSelection == 'scissors')){
+        playerScore = playerScore + 1;
+    }
+
+
+}
+
+ function game(){
+     
+     for (let i=0;i < 5;i++){
+         playRound();
+
+     }
+     if (computerScore > playerScore){
+         console.log("You lose,computer wins")
+     }
+     else if (playerScore > computerScore){
+         console.log("You win,computer lose")
+     }
+ }
+console.log(game());
+  </script>
+</head>
+</html>
